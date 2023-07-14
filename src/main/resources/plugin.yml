@@ -1,0 +1,14 @@
+name: BetterCommunication
+version: '${version}'
+main: io.github.severnarch.bettercommunication.BetterCommunication
+api-version: '1.20'
+load: STARTUP
+description: A plugin made towards improvement of the Minecraft chat and its communication features.
+commands:
+  bettercommunication:
+    description: The main command for BetterCommunication.
+    usage: /bettercommunication <help|version>
+    permission: bettercommunication.bettercommunication
+permissions:
+  bettercommunication.bettercommunication:
+    description: Access to /bettercommunication (help and version)
