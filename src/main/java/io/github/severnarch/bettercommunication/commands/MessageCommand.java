@@ -15,10 +15,6 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        ArrayList<String> onlinePlayers = new ArrayList<>();
-        for (Player player : sender.getServer().getOnlinePlayers()) {
-            onlinePlayers.add(player.getName());
-        }
         if (sender instanceof Player) {
             if (!sender.hasPermission("bettercommunication.message")) {
                 sender.sendMessage("%s%sYou do not have permission to use this command.".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR));
@@ -39,7 +35,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
                         target = sender.getServer().getPlayer(args[0]);
                         if (args.length >= 2) {
                             ArrayList<String> messageArgs = new ArrayList<>();
-                            Boolean doTrimCheck = true;
+                            boolean doTrimCheck = true;
                             for (String arg : args) {
                                 if (doTrimCheck) {
                                     if (!Objects.equals(arg, args[0])) {
