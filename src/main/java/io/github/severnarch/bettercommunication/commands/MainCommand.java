@@ -16,20 +16,23 @@ public class MainCommand implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
+            if (!sender.hasPermission("bettercommunication.bettercommunication")) {
+                sender.sendMessage("%s%sYou do not have permission to use this command.".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR));
+            }
             if (args.length >= 1) {
                 if (Objects.equals(args[0], "version")) {
-                    sender.sendMessage("%s %s%s is running on version %s".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_INFO, Constants.PLUGIN_INFO.getName(), Constants.PLUGIN_INFO.getVersion()));
+                    sender.sendMessage("%s%s%s is running on version %s".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_INFO, Constants.PLUGIN_INFO.getName(), Constants.PLUGIN_INFO.getVersion()));
                 } else if (Objects.equals(args[0], "help")) {
                     assert Constants.PLUGIN_INFO.getDescription() != null;
-                    sender.sendMessage("%s %s%s is %s".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_INFO, Constants.PLUGIN_INFO.getName(), Constants.PLUGIN_INFO.getDescription().toLowerCase()));
+                    sender.sendMessage("%s%s%s is %s".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_INFO, Constants.PLUGIN_INFO.getName(), Constants.PLUGIN_INFO.getDescription().toLowerCase()));
                 } else if (Objects.equals(args[0], "usage")) {
                     assert Constants.PLUGIN_INFO.getDescription() != null;
-                    sender.sendMessage("%s %sCommand usage: /bettercommunication <help|version|usage>".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_INFO));
+                    sender.sendMessage("%s%sCommand usage: /bettercommunication <help|version|usage>".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_INFO));
                 } else {
-                    sender.sendMessage("%s %sInvalid argument at Position 0: \"%s\".".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR, args[0]));
+                    sender.sendMessage("%s%sInvalid argument at Position 0: \"%s\".".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR, args[0]));
                 }
             } else {
-                sender.sendMessage("%s %sMissing argument at Position 0.".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR));
+                sender.sendMessage("%s%sMissing argument at Position 0.".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR));
             }
         }
         return false;

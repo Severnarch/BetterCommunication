@@ -5,13 +5,28 @@ api-version: '1.20'
 load: STARTUP
 description: A plugin made towards improvement of the Minecraft chat and its communication features.
 folia-supported: true
+author: Severnarch
+database: false
+website: https://www.github.com/Severnarch/BetterCommunication
 commands:
   bettercommunication:
     description: The main command for BetterCommunication.
     permission: bettercommunication.bettercommunication
+  message:
+    description: Messaging-based commands.
+    permission: bettercommunication.message
+    aliases:
+      - msg
+      - whisper
+      - w
+      - r
+      - reply
 permissions:
   bettercommunication.bettercommunication:
     description: Access to /bettercommunication
+
+  bettercommunication.message:
+    description: Access to /message and related commands.
 
   bettercommunication.mention:
     description: Access to mentioning players (@).
