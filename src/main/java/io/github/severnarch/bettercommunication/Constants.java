@@ -13,7 +13,7 @@ public class Constants {
     public static final String COLOUR_ERROR = ChatColor.translateAlternateColorCodes('&', "&c");
 
     public static final String COLOUR_RESET = ChatColor.translateAlternateColorCodes('&', "&r");
-    public static final String COLOUR_MENTION = ChatColor.translateAlternateColorCodes('&', "&a&l");
+    public static final String COLOUR_MENTION = ChatColor.translateAlternateColorCodes('&', "&a&o");
 
 
     // Plugin Information
