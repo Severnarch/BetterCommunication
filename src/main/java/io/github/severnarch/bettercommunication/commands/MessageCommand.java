@@ -65,7 +65,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
                     if (messagePrefix == null || messagePrefix.split("%s", -1).length-1 != 2) {
                         messagePrefix = Constants.MESSAGE_PREFIX;
                     }
-                    messagePrefix = ChatColor.translateAlternateColorCodes('&', messagePrefix);
+                    messagePrefix = ChatColor.translateAlternateColorCodes('&', messagePrefix)+" "+Constants.COLOUR_RESET;
                     sender.sendMessage("%s%s".formatted(messagePrefix.formatted("You", target.getName()), message));
                     target.sendMessage("%s%s".formatted(messagePrefix.formatted(sender.getName(), "You"), message));
                 }

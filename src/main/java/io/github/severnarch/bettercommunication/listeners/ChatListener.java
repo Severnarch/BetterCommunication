@@ -1,6 +1,7 @@
 package io.github.severnarch.bettercommunication.listeners;
 
 import io.github.severnarch.bettercommunication.Constants;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Instrument;
 import org.bukkit.Note;
 import org.bukkit.entity.Player;
@@ -32,7 +33,12 @@ public class ChatListener implements Listener {
                 if (continueToMention) {
                     Player target = event.getPlayer().getServer().getPlayer(player);
                     if (target != null) {
-                        section = "%s%s%s".formatted(Constants.COLOUR_MENTION, section, Constants.COLOUR_RESET);
+                        String colourMention = (String) Constants.PLUGIN.getConfig().get("mentionColour");
+                        if (colourMention == null) {
+                            colourMention = Constants.COLOUR_MENTION;
+                        }
+                        colourMention = ChatColor.translateAlternateColorCodes('&', colourMention);
+                        section = "%s%s%s".formatted(colourMention, section, Constants.COLOUR_RESET);
                         playersToPing.add(target);
                     }
                 }
