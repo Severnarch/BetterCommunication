@@ -1,14 +1,12 @@
 package io.github.severnarch.bettercommunication.commands;
 
-import io.github.severnarch.bettercommunication.BetterCommunication;
 import io.github.severnarch.bettercommunication.Constants;
-import org.bukkit.ChatColor;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 
