@@ -1,0 +1,8 @@
+# Versions
+This file contains every BetterCommunication version and its changelog. A version being supported means it will have questions about it answered officially, while unsupported versions will not receive any more answers as it is suggested to update from there. A `❌` means the version is not supported, a `✅` means the version is supported and a `⚠️` means the version is being unsupported in the next update unless stated otherwise.
+
+| Version                                                                                                      | Supported? | Changelogs                                                                                                                                        |
+|--------------------------------------------------------------------------------------------------------------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`1.0.0`](https://github.com/Severnarch/BetterCommunication/commit/6539947b9b6e023bb94ae8d80156d7b8bdfe758d) | ❌          | - Basic messaging commands (message/whisper, reply)<br>- Main command                                                                             |
+| [`1.1.0`](https://github.com/Severnarch/BetterCommunication/commit/56a0c1c71afe489a84ad940fb3258f9e5823a24f) | ✅          | - Fix "@" pinging everybody<br>- Permission `bettercommunication.mention.all` to use "@" to ping all<br>- Configurable colours and whisper format |
+

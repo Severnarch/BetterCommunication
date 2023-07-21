@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Constants {
 
     public static final String CHAT_PREFIX = ChatColor.translateAlternateColorCodes('&', "&8&l[&dBetter&6Communication&8&l] &r");
-    public static final String MESSAGE_PREFIX = ChatColor.translateAlternateColorCodes('&', "&8&l[&a&o%s &d-&6> &a&o%s&8&l] &r");
+    public static final String MESSAGE_PREFIX = ChatColor.translateAlternateColorCodes('&', "&8&l[&a&o%s &d-&6> &a&o%s&8&l]");
 
     public static final String COLOUR_INFO = ChatColor.translateAlternateColorCodes('&', "&3");
     public static final String COLOUR_WARNING = ChatColor.translateAlternateColorCodes('&', "&e");

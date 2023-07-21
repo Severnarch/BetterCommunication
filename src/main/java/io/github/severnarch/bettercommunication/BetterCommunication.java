@@ -17,6 +17,7 @@ public final class BetterCommunication extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        this.saveDefaultConfig();
         // Add commands to commands map
         commands.put("bettercommunication", this.getCommand("bettercommunication"));
         commands.put("message", this.getCommand("message"));

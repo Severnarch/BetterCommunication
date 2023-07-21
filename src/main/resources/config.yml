@@ -1,0 +1,9 @@
+# The colour for mentioning a player (@player)
+# Default: "&a&o" (Italic Light Green)
+mentionColour: "&a&o"
+
+# The format for private messaging (/msg)
+# This must contain two "%s", one for each player reference. If there is more or less, it will fall back to the
+# default value automatically.
+# Default: "8&l[&a&o%s &d-&6> &a&o%s&8&l]"
+messageFormat: "8&l[&a&o%s &d-&6> &a&o%s&8&l]"

@@ -1,11 +1,14 @@
 package io.github.severnarch.bettercommunication.commands;
 
+import io.github.severnarch.bettercommunication.BetterCommunication;
 import io.github.severnarch.bettercommunication.Constants;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
 
@@ -18,6 +21,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
         if (sender instanceof Player) {
             if (!sender.hasPermission("bettercommunication.message")) {
                 sender.sendMessage("%s%sYou do not have permission to use this command.".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR));
+                return false;
             }
             if (args.length >= 1) {
                 Player lastMessaged = lastMessagedMap.get(sender);
@@ -59,8 +63,13 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
                 if (target != null) {
                     lastMessagedMap.put((Player) sender, target);
                     lastMessagedMap.put(target, (Player) sender);
-                    sender.sendMessage("%s%s".formatted(Constants.MESSAGE_PREFIX.formatted("You", target.getName()), message));
-                    target.sendMessage("%s%s".formatted(Constants.MESSAGE_PREFIX.formatted(sender.getName(), "You"), message));
+                    String messagePrefix = (String) Constants.PLUGIN.getConfig().get("messageFormat");
+                    if (messagePrefix == null || messagePrefix.split("%s", -1).length-1 != 2) {
+                        messagePrefix = Constants.MESSAGE_PREFIX;
+                    }
+                    messagePrefix = ChatColor.translateAlternateColorCodes('&', messagePrefix+" &r");
+                    sender.sendMessage("%s%s".formatted(messagePrefix.formatted("You", target.getName()), message));
+                    target.sendMessage("%s%s".formatted(messagePrefix.formatted(sender.getName(), "You"), message));
                 }
             }
         }

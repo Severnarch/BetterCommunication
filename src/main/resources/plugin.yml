@@ -31,6 +31,9 @@ permissions:
   bettercommunication.mention:
     description: Access to mentioning players (@).
     default: op
+  bettercommunication.mention.all:
+    description: Access to mentioning all online players by just typing "@"
+    default: op
   bettercommunication.mention.ping:
     description: Requires bettercommunication.mention; plays a ping sound to mentioned players
     default: op

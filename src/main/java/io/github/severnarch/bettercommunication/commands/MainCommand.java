@@ -18,6 +18,7 @@ public class MainCommand implements CommandExecutor, TabCompleter {
         if (sender instanceof Player) {
             if (!sender.hasPermission("bettercommunication.bettercommunication")) {
                 sender.sendMessage("%s%sYou do not have permission to use this command.".formatted(Constants.CHAT_PREFIX, Constants.COLOUR_ERROR));
+                return false;
             }
             if (args.length >= 1) {
                 if (Objects.equals(args[0], "version")) {
